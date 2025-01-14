@@ -76,7 +76,7 @@ const BwtPage = () => {
                             position in the string, creating a new 
                             string by slicing the original string at
                              that position and concatenating the two parts.</li>
-                        <li>For {inputString}, we get the permutations: {`[${tableUnsorted.toString()}]`}</li>
+                        <li>For <span className='bwt-info'>{inputString}</span>, we get the permutations: <span className='bwt-info'>{`[${tableUnsorted.toString()}]`}</span></li>
                     </ul>
                 </li>
                 <li>

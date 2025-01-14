@@ -4,9 +4,10 @@
     justify-content: center;
     align-items: center;
     padding: 20px;
+    width: 840px;
 
     font-family: sans-serif;
-    background-color: rgba(240, 248, 255, 40%);
+    background-color: rgba(240, 248, 255, 35%);
     border-radius: 15px;
 }
 .bwt-page-container h1{
@@ -60,5 +61,17 @@
     color: rgb(255, 255, 150);
 }
 p{
-    max-width: 800px;
+    max-width: 700px;
+}
+p ol{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+p ul{
+    margin-bottom: 10px;
+}
+.bwt-info{
+    background-color: rgb(247, 228, 189);
+    padding: 1px 3px 1px 3px;
+    border-radius: 5px;
 }

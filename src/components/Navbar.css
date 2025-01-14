@@ -6,6 +6,7 @@
     padding: 50px 10px 50px 10px;
     font-weight: 500;
     font-family: sans-serif;
+    margin-bottom: 0px;
 }
 .navbar-container ul{
     display: flex;
