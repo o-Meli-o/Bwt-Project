@@ -19,6 +19,10 @@ const BwtPage = () => {
     }
 
     function bwtTransformation(input){
+
+        if(input.slice(-1)!="$"){
+            input = input + "$" ;
+        }
         const n = input.length;
         const table = [];
 
@@ -76,22 +80,22 @@ const BwtPage = () => {
                             position in the string, creating a new 
                             string by slicing the original string at
                              that position and concatenating the two parts.</li>
-                        <li>For <span className='bwt-info'>{inputString}</span>, we get the permutations: <span className='bwt-info'>{`[${tableUnsorted.toString()}]`}</span></li>
+                        <li>For <span className='bwt-info'>{inputString + "$"}</span>, we get the permutations: <span className='bwt-info'>{`[${tableUnsorted.toString()}]`}</span></li>
                     </ul>
                 </li>
                 <li>
                     <h4>Sort permutations lexicographically:</h4>
                     <ul>
                         <li>We sort these permutations in lexicographic (alphabetical) order.</li>
-                        <li>After sorting the permutations, we get: {`[${tableSorted.toString()}]`}</li>
+                        <li>After sorting the permutations, we get: <span className='bwt-info'>{`[${tableSorted.toString()}]`}</span></li>
                     </ul>
                 </li>
                 <li>
                     <h4>Extract the last column:</h4>
                     <ul>
                         <li>We create a new string by taking the last character from each permutation in the sorted table.</li>
-                        <li>For the sorted permutations, the last column characters are: {`[${resultArray}]`}</li>
-                        <li>Concatenating these characters, we get the BWT: {bwt}</li>
+                        <li>For the sorted permutations, the last column characters are: <span className='bwt-info'>{`[${resultArray}]`}</span></li>
+                        <li>Concatenating these characters, we get the BWT: <span className='bwt-info'>{bwt}</span></li>
                     </ul>
                 </li>
            </ol>
