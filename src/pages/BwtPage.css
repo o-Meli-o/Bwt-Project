@@ -72,7 +72,13 @@ p ul{
 }
 .bwt-info{
     /* background-color: rgba(247, 228, 189, 50%); */
-    background-color: rgba(255, 255, 255, 50%);
+    background-color: rgba(255, 255, 255, 40%);
     padding: 1px 3px 1px 3px;
     border-radius: 5px;
+}
+#ep-h3{
+    display: flex;
+    padding: 20px;
+    position: relative;
+    left: -20px;
 }

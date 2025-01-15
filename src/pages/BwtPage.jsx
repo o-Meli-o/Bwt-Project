@@ -9,6 +9,8 @@ const BwtPage = () => {
     const [tableSorted, setTableSorted] = useState([]);
     const [resultArray, setResultArray] = useState([]);
     const [showInfo, setShowInfo] = useState(false);
+    const [nBefore, setNBefore] = useState();
+    const [nAfter, setNAfter] = useState();
 
     function handleInputChange(event){
         setInputString(event.target.value);
@@ -48,6 +50,9 @@ const BwtPage = () => {
         setBwt(result);
 
         setResultArray(result.split(""));
+
+        setNBefore(input.length);
+        setNAfter(result.length);
     }
 
   return (
@@ -99,6 +104,14 @@ const BwtPage = () => {
                     </ul>
                 </li>
            </ol>
+           <h3 id='ep-h3'>Evaluate Performance:</h3>
+           <ul>
+            <li>Number of Characters Before BWT: <span className='bwt-info'>{nBefore}</span></li>
+            <li>Number of Characters After BWT: <span className='bwt-info'>{nAfter}</span></li>
+           </ul>
+           <p> The BWT does not change the length of the String. 
+            It helps in transforming the data to make it more amenable
+             to other compression techniques.</p>
            </p>
       )}
     </div>
