@@ -71,7 +71,7 @@ p ul{
     margin-bottom: 10px;
 }
 .bwt-info{
-    background-color: rgb(247, 228, 189);
+    background-color: rgba(247, 228, 189, 50%);
     padding: 1px 3px 1px 3px;
     border-radius: 5px;
 }
