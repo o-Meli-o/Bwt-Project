@@ -63,7 +63,7 @@ const BwtDecodingPage = () => {
             <h4>Initialize the Table:</h4>
             <ul>
               <li>First we create an empty table with as many rows as the length of the string.</li>
-              <li>For {inputString}, we get the table: {`[${emptyTable.toString()}]`}</li>
+              <li>For <span className='bwt-info'>{inputString}</span>, we get the table: <span className='bwt-info'>{`[${emptyTable.toString()}]`}</span></li>
             </ul>
           </li>
           <li>
@@ -72,14 +72,14 @@ const BwtDecodingPage = () => {
               <li>We insert the BWT string as a new column to the table.</li>
               <li>Sort the rows lexicographically.</li>
               <li>And repeat until the table is complete.</li>
-              <li>When the table is complete, we get: {`[${finalTable.toString()}]`}</li>
+              <li>When the table is complete, we get: <span className='bwt-info'>{`[${finalTable.toString()}]`}</span></li>
             </ul>
           </li>
           <li>
             <h4>Identify Original String:</h4>
             <ul>
-              <li>We find the row ending with the special end-of-string character ($). We read off the characters row-wise to get the original string.</li>
-              <li>As the original we get: {original}</li>
+              <li>We find the row ending with the special end-of-string character <span className='bwt-info'>($)</span>. We read off the characters row-wise to get the original string.</li>
+              <li>As the original we get: <span className='bwt-info'>{original}</span></li>
             </ul>
           </li>
         </ol>

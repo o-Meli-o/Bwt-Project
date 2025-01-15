@@ -7,6 +7,8 @@ const RunLengthEncodingPage = () => {
       const [rle, setRle] = useState("");
       const [resultArray, setResultArray] = useState([]);
       const [showInfo, setShowInfo] = useState(false);
+      const [nBefore, setNBefore] = useState();
+      const [nAfter, setNAfter] = useState();
   
       function handleInputChange(event){
           setInputString(event.target.value);
@@ -36,6 +38,33 @@ const RunLengthEncodingPage = () => {
         setRle(result);
 
         setResultArray(result.split(""));
+
+        setNBefore(input.length);
+        setNAfter(result.length);
+      }
+      function compare(){
+
+        if( nBefore < nAfter )
+
+          return(<p>Even though Run-Length Encoding (RLE) can
+             be effective for data with lots of repeated characters,
+              in this particular case, the compressed output is actually
+               longer than the original string. This highlights that RLE’s
+                effectiveness largely depends on the nature of the data,
+                and how RLE might not be efficient if there aren't many 
+                repeated characters.</p>);
+
+        else if( nBefore > nAfter)
+          return(<p>This shows that in this particular case, applying BWT
+             followed by RLE has resulted in effective compression. The RLE
+              output has a smaller size compared to the original string, 
+              demonstrating the potential of combining these techniques for 
+              data compression. The RLE is efficient when there are many 
+              repeated characters.</p>);
+        
+        else if( nBefore = nAfter )
+          return(<p>In this particular case, the combined BWT and RLE processes
+             do not change the overall size of the string.</p>);
       }
   
     return (
@@ -71,6 +100,12 @@ const RunLengthEncodingPage = () => {
                       </ul>
                   </li>
              </ol>
+             <h3 id='ep-h3'>Evaluate Performance:</h3>
+           <ul>
+            <li>Number of Characters Before BWT: <span className='bwt-info'>{nBefore}</span></li>
+            <li>Number of Characters After BWT: <span className='bwt-info'>{nAfter}</span></li>
+           </ul>
+           {compare()}
              </p>
         )}
       </div>
