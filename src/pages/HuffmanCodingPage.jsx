@@ -177,7 +177,7 @@ const HuffmanCodingPage = () => {
           placeholder="Enter text to encode..." />
         <button className='transform-button' onClick={handleEncode}>Encode!</button>
       </div>
-      <h3> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Here is the encoded output:</h3>
+      <h3>Here is the encoded output:</h3>
       <div>
         <h4 className='bwt-result'>{encodedOutput}</h4>
         <button className='info-button' onClick={handleShowInfo}><i class="fa-solid fa-lightbulb fa-2xl"></i></button>
