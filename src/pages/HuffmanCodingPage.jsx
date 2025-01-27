@@ -9,10 +9,18 @@ const HuffmanCodingPage = () => {
   const [freqTable, setFreqTable] = useState([]);
   const [huffmanTree, setHuffmanTree] = useState(null);
   const [codes, setCodes] = useState([]);
+  const [originalSize, setOriginalSize] = useState();
+  const [encodedSize, setEncodedSize] = useState();
+
+
 
   const handleEncode = () => {
     const output = encode(inputText);
     setEncodedOutput(output);
+    const originalSize = new Blob([inputText]).size; // Size in bytes
+    setOriginalSize(originalSize);
+    const encodedSize = new Blob([output.replace(/ /g,'')]).size; // Size in bits
+    setEncodedSize(encodedSize);
   };
   function handleShowInfo() {
     setShowInfo(!showInfo);
@@ -228,7 +236,12 @@ const HuffmanCodingPage = () => {
               <h4>Encode the String:</h4>
               <ul>
                 <li>Replace each character in the input with its corresponding code.</li>
-                <li>As the encoded output, we get: {encodedOutput}</li>
+                <li>As the encoded output, we get: {encodedOutput}  
+                  <ul>
+                    <li>Original size: {originalSize} characters / {originalSize*8} bits</li>
+                    <li>Encoded size: {encodedSize} bits</li>
+                  </ul>
+                </li>
               </ul>
             </li>
           </ol>
